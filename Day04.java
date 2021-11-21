@@ -9,17 +9,18 @@ public class Day04 {
 
 		//문제 1번 : 소인수 분해를 해주는 프로그램을 작성하시오.
 
-		System.out.println("소인수분해를 할 수를 입력하세요 : ");
+		System.out.print("소인수분해를 할 수를 입력하세요 : ");
 		int num = sc.nextInt();
 		System.out.print(num + " = ");
 		for (int i = 2; i <= num; i++) {
 			if (num % i == 0) {
 				num = num / i;
-				int j[] = { i };
-				i = 1;
-				for (int k : j)
-					System.out.print(k + "*");
+				System.out.print(i);
+				i=1;
+			if(num  != i) {
+				System.out.print("*");	
 			}
+				
 
 		}
 
@@ -43,5 +44,6 @@ public class Day04 {
 //		}System.out.println("종료");
 //	}
 
+	}
 	}
 }
