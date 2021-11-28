@@ -53,8 +53,42 @@ public class Day09 {
 //
 //	}
 		//3번 : 2차원 배열에 아래와 같이 다이아몬드형태로 출력하시오.
-		//int[][] ary = new int[7][7];
-		
+	      int n = 7;
+	      int[][] arr = new int[n][n];
+	      int num = 1; // 1~25
+	      int start; // 각 행에서 처음 시작하는 칸
+	      int count; // 각 행에서 몇개의 숫자를 출력할 것인지
+
+	      for(int i = 0 ; i < n ; i++)
+	      {
+	         
+	         if(i <= n/2) 
+	            start = n/2-i; // 3-i
+	         
+	         else 
+	            start = i-(n/2); // i-3
+	         
+	         // start = Math.abs(n/2-i);
+	         
+	         count = 7 - (start*2);
+	         for(int j = 0 ; j < count ; j++)
+	         {
+	            arr[i][start+j] = num;
+	            num++;
+	         }
+	      }
+	      
+	      // 출력코드
+	      for(int i = 0 ; i < n ; i++)
+	      {
+
+	         for(int j = 0 ; j < n ; j++)
+	         {
+	            System.out.print(arr[i][j] + (arr[i][j]>9?" ":"  "));
+	         }
+	         System.out.println();
+	      }
+
 		
 		
 		
