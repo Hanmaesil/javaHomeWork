@@ -1,6 +1,5 @@
 package homework;
 
-import java.util.ArrayList;
 
 public class Day12_1 {
 
@@ -14,20 +13,20 @@ public class Day12_1 {
 
 	}
 
-	public static ArrayList<String> reverseStr(ArrayList<String> ary) {
-		System.out.println(ary.get(0));
-		for (int i = 0; i < ary.size() - 1; i++) {
-			for (int j = i + 1; j < ary.size() - i - 1; j++) {
-				if (ary.get(j).compareTo(ary.get(j + 1)) < 0) {
-					String temp = ary.get(j + 1);
-					ary.set(j + 1, ary.get(j));
-					ary.set(j, temp);
-				}
+	public static String reverseStr(String Stc) {
 
+		char[] array = Stc.toCharArray(); // 스트링을 캐릭터 배열로 받는 명령어
+		for (int i = 0; i < array.length - 1; i++) {
+			for (int j = 0; j < array.length - i - 1; j++) {
+				if (array[j] > array[j + 1]) {
+					char temp = array[j + 1];
+					array[j + 1] = array[j];
+					array[j] = temp;
+				}//버블정렬
 			}
-
 		}
-		return reverseStr;
-
+		String str = new String(array); //캐릭터 배열을 스트링으로 변환
+		return str;
 	}
+
 }
